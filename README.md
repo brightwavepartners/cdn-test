@@ -14,3 +14,7 @@ The index.htm file loads some Javascript code that displays the date and time wh
 ```
 
 The `<script>` line loads the Javascript code and is currently set to load from a local file. Switch the `src` location to a CDN to load the Javascript from the CDN.
+
+To verify CDN functionality, open the index.htm file in a browser and click on the **Click me to display Date and Timne** button. If the Javascript has been successfully loaded from the CDN, a message box should popup with the current date and time.
+
+Additionally, you can check correct CDN functionality by inspecting the headers on the datetime.js Javascript file that is loaded into the browser. Open the developer tools of the browser (usually by pressing F12) and take a look at the headers. Verify the **Request URL** is the CDN location. If the CDN source has cache-control set, verify that the **cache-control** header is present and is correct. Finally, the **x-cache** header should indicate a HIT. It may take a second reload of the page for the cache to register a HIT.
